@@ -50,7 +50,7 @@ class MapSampleState extends State<MapSample> {
             left: MediaQuery.of(context).size.width * 0.05,
             // width: MediaQuery.of(context).size.width * 0.9,
             child: SearchMapPlaceWidget(
-              apiKey: API_KEY,
+              apiKey: "123",
               location: _initialCamera.target,
               radius: 30000,
               onSelected: (place) async {
