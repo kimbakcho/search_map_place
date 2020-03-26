@@ -11,6 +11,7 @@ class SearchMapPlaceWidget extends StatefulWidget {
     this.language = 'en',
     this.location,
     this.radius,
+    this.backgroundcolor,
     this.strictBounds = false,
   }) : assert((location == null && radius == null) ||
             (location != null && radius != null));
@@ -52,6 +53,8 @@ class SearchMapPlaceWidget extends StatefulWidget {
 
   /// The color of the icon to show in the search box
   final Color iconColor;
+
+  Color backgroundcolor;
 
   @override
   _SearchMapPlaceWidgetState createState() => _SearchMapPlaceWidgetState();
@@ -193,7 +196,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget>
 
   BoxDecoration _containerDecoration() {
     return BoxDecoration(
-      color: Colors.white,
+      color: widget.backgroundcolor ?? Colors.white,
       borderRadius: BorderRadius.all(Radius.circular(6.0)),
       boxShadow: [
         BoxShadow(color: Colors.black12, blurRadius: 20, spreadRadius: 10)
